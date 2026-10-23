@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PROJECT: HER</title>
+    <!-- Optional fonts: the site still works if these fail to load -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="stage-1">
+    <canvas id="stars" aria-hidden="true"></canvas>
+
+    <!-- STAGE 1: SYSTEM INITIALIZATION -->
+    <section class="stage active" id="stage1" aria-live="polite">
+      <div class="panel">
+        <h1 class="title">PROJECT: HER</h1>
+        <p class="mono label">PERSONAL TRANSMISSION PROTOCOL 001</p>
+        <div class="terminal" id="terminal"></div>
+        <button class="btn hidden" id="btnInit">INITIALIZE PROTOCOL</button>
+      </div>
+    </section>
+
+    <!-- STAGE 2: ACCESS GRANTED -->
+    <section class="stage" id="stage2">
+      <div class="panel">
+        <p class="mono status"><span class="dot"></span> ACCESS GRANTED</p>
+        <p class="mono label">CONFIDENTIAL // PERSONAL MESSAGE</p>
+        <p class="mono meta">Recipient: Ida<br />Classification: Personal</p>
+        <h2 class="heading">There is something I need to tell you.</h2>
+        <p class="sub">
+          I've been trying to find the right words, so I decided to build
+          something instead.
+        </p>
+        <button class="btn" id="btnOpen">OPEN TRANSMISSION</button>
+      </div>
+    </section>
+
+    <!-- STAGE 3: EMOTIONAL DIAGNOSTIC -->
+    <section class="stage" id="stage3">
+      <div class="panel">
+        <p class="mono label">RUNNING EMOTIONAL DIAGNOSTICS...</p>
+        <div
+          class="bar"
+          role="progressbar"
+          aria-valuemin="0"
+          aria-valuemax="100"
+          aria-valuenow="0"
+          id="barWrap"
+        >
+          <div class="fill" id="barFill"></div>
+        </div>
+        <div class="terminal" id="diagLog"></div>
+        <div class="result hidden" id="diagResult">
+          <h2 class="heading">SYSTEM DIAGNOSIS: I MIGHT HAVE FEELINGS.</h2>
+          <p class="sub">Some things are easier to feel than to explain.</p>
+          <button class="btn" id="btnFinal">READ THE FINAL TRANSMISSION</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- STAGE 4: THE CONFESSION -->
+    <section class="stage" id="stage4">
+      <article class="letter">
+        <p class="mono label">FINAL TRANSMISSION // INTENDED FOR IDA</p>
+        <h2 class="heading">Hi, Ida.</h2>
+        <div id="letterBody">
+          <!-- CONFESSION: edit carefully. Each <p> is one paragraph. -->
+          <p>
+            Hi Ida. I just wanna tell you that I like you, like I'm into you,
+            and I can't stop thinking about the things that might make you hate
+            me. Baka may magawa akong hindi tama and ma-dislike mo
+          </p>
+          <p>
+            I might have misunderstood you dahil ang bait mo sakin, and di ka
+            like OA na parang gustong magpa-impress sa lahat. Unang araw pa lang
+            ng pag-uusap natin, nang-aaway ka na, and for some reason, I like
+            that a lot about you. Di ka papatalo eh kasi kupal. Kaya baka na
+            misunderstoodd kita dahil ang bait mo sakin and maybe I'm just
+            reading too much into the way you treat me. If na misunderstood
+            kita, I'm sorry
+          </p>
+          <p>
+            So yea, I do care about you. Like, fr. Hindi ko rin alam kung paano
+            ko ba dapat sabihin to or kung ano ba magiging reaksyon mo, but I
+            guess Id rather be honest with you than keep wondering about all the
+            what-ifs. I just wanna know what you think about this, and I hope
+            you can be honest with me too
+          </p>
+        </div>
+        <hr class="divider" />
+        <p class="mono label complete">TRANSMISSION COMPLETE.</p>
+        <p class="closing">
+          I don't expect you to have the perfect answer. I just wanted to be
+          honest with you.
+        </p>
+        <div class="replies">
+          <button
+            class="btn ghost"
+            data-reply="That's all I ask. Take your time, and tell me what you really think."
+          >
+            I'll be honest with you
+          </button>
+          <button
+            class="btn ghost"
+            data-reply="Of course. Take all the time you need. There's no pressure."
+          >
+            I need a little time
+          </button>
+        </div>
+        <p class="reply-out" id="replyOut" role="status" aria-live="polite"></p>
+        <p class="mono signature">
+          Built with honesty, a little courage, and way too much JavaScript.
+        </p>
+      </article>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>
